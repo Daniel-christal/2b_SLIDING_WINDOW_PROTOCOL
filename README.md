@@ -1,5 +1,6 @@
 # 2b IMPLEMENTATION OF SLIDING WINDOW PROTOCOL
-## AIM
+## AIM:
+To write a python program to perform sliding window protocol
 ## ALGORITHM:
 1. Start the program.
 2. Get the frame size from the user
@@ -9,6 +10,7 @@
 6. Stop the Program
 ## PROGRAM:
 # CLIENT:
+```
 import socket
 s=socket.socket()
 s.bind(('localhost',8000))
@@ -27,13 +29,16 @@ while True:
  if ack:
  print(ack)
  i+=s
- # SERVER:
+```
+# SERVER:
+```
  import socket
 s=socket.socket()
 s.connect(('localhost',8000))
 while True: 
  print(s.recv(1024).decode())
  s.send("acknowledgement recived from the server".encode())
+```
 ## OUPUT:
 # CLIENT:
 ![image](https://github.com/Daniel-christal/2b_SLIDING_WINDOW_PROTOCOL/assets/145742847/e21ac3ce-36b3-424b-af71-96032f46d1e4)
